@@ -2,8 +2,12 @@ const express = require('express');
 const oracledb = require('oracledb');
 const database = require('./services/database.js')
 const routes = require('./services/routes.js');
+const bodyParser = require("body-parser");
+
 
 const app = express();
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended:true}));
 
 app.set("port", process.env.PORT  || 3000);
 
@@ -11,7 +15,7 @@ app.set("port", process.env.PORT  || 3000);
 //     res.send("Welcome to API");
 // })
 
-app.use('/', routes)
+app.use('/', routes, bodyParser.json())
 
 
 

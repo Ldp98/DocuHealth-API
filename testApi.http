@@ -1,2 +1,29 @@
 ###
+GET http://localhost:3000/expediente/22021866 HTTP/1.1
+
+###
 GET http://localhost:3000/user/ADMIN HTTP/1.1
+
+###
+POST http://localhost:3000/expediente HTTP/1.1
+Content-Type: application/json
+
+{
+    "CODIGO_DIAGNOSTICO": "H521",
+    "TIPO_DIAGNOSTICO": "P",
+    "CLINICA": "4",
+    "SOCIO": "258143",
+    "TIPO_CONSULTA": "R",
+    "DOCTOR": "2122-06",
+    "USUARIO": "2122-06",
+    "NO_CONSULTA": "588577"
+}
+
+###
+POST http://localhost:3000/user HTTP/1.1
+Content-Type: application/json
+
+{
+    "usuario": "ADMIN",
+    "password": "GTUNO"
+}
