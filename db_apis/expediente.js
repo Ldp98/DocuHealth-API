@@ -7,7 +7,7 @@ async function find(id) {
   binds.id = id;
   const result = await database.simpleExecute(query, binds);
   //console.log(result.rows);
-  return result.rows;
+  return result.rows
 }
 
 //find();
